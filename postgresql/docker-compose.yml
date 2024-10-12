@@ -5,9 +5,8 @@ services:
     image: postgres
     container_name: my-postgres
     environment:
-      POSTGRES_USER: myuser
-      POSTGRES_PASSWORD: mysecretpassword
-      POSTGRES_DB: mydatabase
+      POSTGRES_USER: ciom
+      POSTGRES_PASSWORD: Nachoc04042017@
     ports:
       - "5432:5432"
     networks:
@@ -19,10 +18,10 @@ services:
     image: dpage/pgadmin4
     container_name: my-pgadmin
     environment:
-      PGADMIN_DEFAULT_EMAIL: admin@domain.com
-      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_DEFAULT_EMAIL: admin@example.com  # Usa un correo válido aquí
+      PGADMIN_DEFAULT_PASSWORD: Nachoc04042017@
     ports:
-      - "80:80"
+      - "8081:80"  # Cambia el puerto si está ocupado
     networks:
       - pg-network
     depends_on:
@@ -34,4 +33,3 @@ networks:
 
 volumes:
   postgres-data:
-
